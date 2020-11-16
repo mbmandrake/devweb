@@ -21,7 +21,7 @@ router.post('/clientes/del/:id', async (req, res) => {
 });
 
 router.post('/clientes', [
-    validador.check(['id','nome','sobrenome','senha','email'], 'Campo é Obrigatório').notEmpty(),
+    validador.check(['id', 'nome', 'sobrenome', 'senha', 'email'], 'Campo é Obrigatório').notEmpty(),
     validador.check('email', 'E-mail Inválido').isEmail(),
     validador.check('dataNascimento', 'Data Inválida').isDate().isAfter('1900-01-01')
 ], async (req, res) => {

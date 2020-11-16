@@ -1,21 +1,21 @@
 const fs = require('fs');
 const util = require('util');
-const NOME_ARQUIVO = 'lista.txt';
+const NOME_ARQUIVO = 'lista.json';
 
 function Cliente() {
     this.id = 0,
-    this.nome = '',
-    this.sobrenome = '',
-    this.senha = '',
-    this.email = '',
-    this.sexo = '',
-    this.cpf = '',
-    this.rg = '',
-    this.telefone = '',
-    this.dataNascimento = '',
-    this.estadoCivil = 1,
-    this.cep = '',
-    this.endereco = ''
+        this.nome = '',
+        this.sobrenome = '',
+        this.senha = '',
+        this.email = '',
+        this.sexo = '',
+        this.cpf = '',
+        this.rg = '',
+        this.telefone = '',
+        this.dataNascimento = '',
+        this.estadoCivil = 1,
+        this.cep = '',
+        this.endereco = ''
 }
 
 var lista = [];

@@ -5,46 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript">
-        function fMasc(objeto,mascara) {
-            obj=objeto
-            masc=mascara
-            setTimeout("fMascEx()",1)
+        function fMasc(objeto, mascara) {
+            obj = objeto
+            masc = mascara
+            setTimeout("fMascEx()", 1)
         }
         function fMascEx() {
-            obj.value=masc(obj.value)
+            obj.value = masc(obj.value)
         }
         function mTel(tel) {
-            tel=tel.replace(/\D/g,"")
-            tel=tel.replace(/^(\d)/,"($1")
-            tel=tel.replace(/(.{3})(\d)/,"$1)$2")
-            if(tel.length == 9) {
-                tel=tel.replace(/(.{1})$/,"-$1")
+            tel = tel.replace(/\D/g, "")
+            tel = tel.replace(/^(\d)/, "($1")
+            tel = tel.replace(/(.{3})(\d)/, "$1)$2")
+            if (tel.length == 9) {
+                tel = tel.replace(/(.{1})$/, "-$1")
             } else if (tel.length == 10) {
-                tel=tel.replace(/(.{2})$/,"-$1")
+                tel = tel.replace(/(.{2})$/, "-$1")
             } else if (tel.length == 11) {
-                tel=tel.replace(/(.{3})$/,"-$1")
+                tel = tel.replace(/(.{3})$/, "-$1")
             } else if (tel.length == 12) {
-                tel=tel.replace(/(.{4})$/,"-$1")
+                tel = tel.replace(/(.{4})$/, "-$1")
             } else if (tel.length > 12) {
-                tel=tel.replace(/(.{4})$/,"-$1")
+                tel = tel.replace(/(.{4})$/, "-$1")
             }
             return tel;
         }
-        function mCPF(cpf){
-            cpf=cpf.replace(/\D/g,"")
-            cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
-            cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
-            cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+        function mCPF(cpf) {
+            cpf = cpf.replace(/\D/g, "")
+            cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+            cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+            cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
             return cpf
         }
-        function mCEP(cep){
-            cep=cep.replace(/\D/g,"")
-            cep=cep.replace(/^(\d{2})(\d)/,"$1.$2")
-            cep=cep.replace(/\.(\d{3})(\d)/,".$1-$2")
+        function mCEP(cep) {
+            cep = cep.replace(/\D/g, "")
+            cep = cep.replace(/^(\d{2})(\d)/, "$1.$2")
+            cep = cep.replace(/\.(\d{3})(\d)/, ".$1-$2")
             return cep
         }
-        function mNum(num){
-            num=num.replace(/\D/g,"")
+        function mNum(num) {
+            num = num.replace(/\D/g, "")
             return num
         }
     </script>
@@ -59,9 +59,9 @@
 
 <body>
     <% if (locals.erros) { %>
-        <% for ( let i = 0; i < locals.erros.length; i++) { %>
-            <div style="color: red;"> <%= locals.erros[i].param %> :  <%= locals.erros[i].msg %> </div>
-            <% } %>
+    <% for ( let i = 0; i < locals.erros.length; i++) { %>
+    <div style="color: red;"> <%= locals.erros[i].param %> : <%= locals.erros[i].msg %> </div>
+    <% } %>
     <% } %>
     <form id="formDados" action="/clientes" method="POST">
 
@@ -103,7 +103,8 @@
         <br>
 
         <label for="cpf">CPF: </label> <br>
-        <input name="cpf" id="cpf" type="text"  onkeydown="javascript: fMasc( this, mCPF );" maxlength="14" value="<%= cliente.cpf %>"> <br>
+        <input name="cpf" id="cpf" type="text" onkeydown="javascript: fMasc( this, mCPF );" maxlength="14"
+            value="<%= cliente.cpf %>"> <br>
         <br>
 
         <label for="rg">RG: </label> <br>
@@ -111,7 +112,8 @@
         <br>
 
         <label for="telefone">Telefone: </label> <br>
-        <input name="telefone" id="telefone" type="text"  onkeydown="javascript: fMasc( this, mTel );" maxlength="14" value="<%= cliente.telefone %>"> <br>
+        <input name="telefone" id="telefone" type="text" onkeydown="javascript: fMasc( this, mTel );" maxlength="14"
+            value="<%= cliente.telefone %>"> <br>
         <br>
 
         <label for="dataNascimento">Data Nascimento: </label> <br>
@@ -166,7 +168,8 @@
         <br>
 
         <label for="cep">CEP: </label> <br>
-        <input name="cep" id="cep" type="text"  onkeydown="javascript: fMasc( this, mCEP );" maxlength="10" value="<%= cliente.cep %>"> <br>
+        <input name="cep" id="cep" type="text" onkeydown="javascript: fMasc( this, mCEP );" maxlength="10"
+            value="<%= cliente.cep %>"> <br>
         <br>
 
         <label for="endereco">Endereço: </label> <br>
