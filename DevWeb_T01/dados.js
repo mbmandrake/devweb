@@ -1,6 +1,6 @@
 const fs = require('fs');
 const util = require('util');
-const NOME_ARQUIVO = 'lista.txt';
+const NOME_ARQUIVO = 'lista.json';
 
 function Cliente() {
     this.id = 0,
