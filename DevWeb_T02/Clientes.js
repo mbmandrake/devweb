@@ -3,6 +3,11 @@ const router = express.Router();
 const dados = require('./dados');
 const validador = require('express-validator');
 
+router.get('/clientes/cadastro', async (req, res) => {
+    let cli = new dados.Cliente();
+    res.render('cadastro', { cliente: cli, lista: await dados.getListaClientes() });
+});
+
 router.get('/clientes', async (req, res) => {
     let cli = new dados.Cliente();
     res.render('home', { cliente: cli, lista: await dados.getListaClientes() });
@@ -11,7 +16,7 @@ router.get('/clientes', async (req, res) => {
 router.get('/clientes/:id', async (req, res) => {
     let id = req.params.id;
     let cli = dados.carregarClientePorId(id);
-    res.render('home', { cliente: cli, lista: await dados.getListaClientes() });
+    res.render('cadastro', { cliente: cli, lista: await dados.getListaClientes() });
 });
 
 router.post('/clientes/del/:id', async (req, res) => {
@@ -47,6 +52,7 @@ router.post('/clientes', [
     if (erros.length == 0) {
         await dados.cadastrarCliente(cli);
         cli = new dados.Cliente();
+        res.redirect('http://localhost:8080/clientes/');
     }
     res.render('home', { cliente: cli, lista: await dados.getListaClientes(), erros: erros });
 });
