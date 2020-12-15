@@ -35,9 +35,9 @@ export class ClienteCadastroComponent implements OnInit {
     })
   }
 
-  // excluir(){
-  //   this.clientesService.excluir(this.cliente);
-  //   this.router.navigate(['/lista-cliente']);
-  // }
+  excluir(){
+    this.clientesService.excluir(this.cliente);
+    this.router.navigate(['/lista-cliente']);
+  }
 
 }

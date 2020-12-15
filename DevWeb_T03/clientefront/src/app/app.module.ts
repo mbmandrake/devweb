@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClienteListaComponent } from './clientes/cliente-lista/cliente-lista.component';
 import { ClienteCadastroComponent } from './clientes/cliente-cadastro/cliente-cadastro.component';
 import { ClientesService } from './clientes/clientes.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ClientesService } from './clientes/clientes.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ClientesService

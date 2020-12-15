@@ -19,19 +19,15 @@
 <br>
 
 <label for="sexo">Sexo: </label> <br>
-<input name="sexo" id="sexo" type="email" [(ngModel)]=" cliente.sexo " required> <br>
-
-<!-- <select name="sexo" id="sexo">
-
-    <option [(ngModel)]="cliente.sexo ">Masculino</option>
-    <option [(ngModel)]="cliente.sexo">Feminino</option>
-
-</select> -->
+    <select name="sexo" id="estadoCivil">
+      <option value="M">Masculino</option>
+      <option value="F">Feminino</option>
+    </select>
 <br>
 <br>
 
 <label for="cpf">CPF: </label> <br>
-<input name="cpf" id="cpf" type="text" maxlength="14" [(ngModel)]=" cliente.cpf "> 
+<input name="cpf" id="cpf" type="text" maxlength="14" onkeydown="javascript: fMasc( this, mCPF );" [(ngModel)]=" cliente.cpf "> 
 <br>
 <br>
 
@@ -41,7 +37,7 @@
 <br>
 
 <label for="telefone">Telefone: </label> <br>
-<input name="telefone" id="telefone" type="text" maxlength="14" [(ngModel)]=" cliente.telefone "> 
+<input name="telefone" id="telefone" type="text" maxlength="14" onkeydown="javascript: fMasc( this, mTel );" [(ngModel)]=" cliente.telefone "> 
 <br>
 <br>
 
@@ -51,20 +47,18 @@
 <br>
 
 <label for="estadoCivil">Estado Civil: </label> <br>
-<input name="estadoCivil" id="estadoCivil" type="number" maxlength="14" [(ngModel)]=" cliente.estadoCivil "> 
-
-<!-- <select name="estadoCivil" id="estadoCivil">
-    <option [(ngModel)]="cliente.estadoCivil">Solteiro</option>
-    <option [(ngModel)]="cliente.estadoCivil">Casado</option>
-    <option [(ngModel)]="cliente.estadoCivil">Divorciado</option>
-    <option [(ngModel)]="cliente.estadoCivil">Viúvo</option>
-    <option [(ngModel)]="cliente.estadoCivil">Separado</option>
-</select> -->
+<select name="estadoCivil" id="estadoCivil">
+    <option value="1">Solteiro</option>
+    <option value="2">Casado</option>
+    <option value="3">Divorciado</option>
+    <option value="4">Viúvo</option>
+    <option value="5">Separado</option>
+</select>
 <br>
 <br>
 
 <label for="cep">CEP: </label> <br>
-    <input name="cep" id="cep" type="text" maxlength="15" [(ngModel)]=" cliente.cep "> 
+    <input name="cep" id="cep" type="text" maxlength="15" onkeydown="javascript: fMasc( this, mCEP );" [(ngModel)]=" cliente.cep "> 
 <br>
 <br>
 
@@ -76,5 +70,5 @@
 <p>
     <button (click)="salvar()">Salvar</button>
     <button [routerLink]="['/lista-cliente']">Cancelar</button>
-    <!-- <button *ngIf="existe" (click)="excluir()">Excluir</button> -->
+    <button *ngIf="existe" (click)="excluir()">Excluir</button>
 </p>

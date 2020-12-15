@@ -1,13 +1,68 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Trabalho 03</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <title>Trabalho 03</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script type="text/javascript">
+        function fMasc(objeto, mascara) {
+            obj = objeto
+            masc = mascara
+            setTimeout("fMascEx()", 1)
+        }
+        function fMascEx() {
+            obj.value = masc(obj.value)
+        }
+        function mTel(tel) {
+            tel = tel.replace(/\D/g, "")
+            tel = tel.replace(/^(\d)/, "($1")
+            tel = tel.replace(/(.{3})(\d)/, "$1)$2")
+            if (tel.length == 9) {
+                tel = tel.replace(/(.{1})$/, "-$1")
+            } else if (tel.length == 10) {
+                tel = tel.replace(/(.{2})$/, "-$1")
+            } else if (tel.length == 11) {
+                tel = tel.replace(/(.{3})$/, "-$1")
+            } else if (tel.length == 12) {
+                tel = tel.replace(/(.{4})$/, "-$1")
+            } else if (tel.length > 12) {
+                tel = tel.replace(/(.{4})$/, "-$1")
+            }
+            return tel;
+        }
+        function mCPF(cpf) {
+            cpf = cpf.replace(/\D/g, "")
+            cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+            cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+            cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+            return cpf
+        }
+        function mCEP(cep) {
+            cep = cep.replace(/\D/g, "")
+            cep = cep.replace(/^(\d{2})(\d)/, "$1.$2")
+            cep = cep.replace(/\.(\d{3})(\d)/, ".$1-$2")
+            return cep
+        }
+        function mNum(num) {
+            num = num.replace(/\D/g, "")
+            return num
+        }
+    </script>
+    <style>
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-  <app-root></app-root>
+
+<body class="mat-typography">
+    <app-root></app-root>
 </body>
+
 </html>

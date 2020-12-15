@@ -7,7 +7,7 @@ export class Cliente{
     sobrenome : string = '';
     senha : string = '';
     email : string = '';
-    sexo : string = '';
+    sexo : string = 'M';
     cpf : string = '';
     rg : string = '';
     telefone : string = '';
@@ -38,10 +38,7 @@ export class ClientesService {
     return await this.http.post<Cliente>('http://localhost:3000/clientes/', cliente).toPromise();
   }
 
-  // async excluir(cliente : Cliente){
-  //   let i = this.lista.findIndex(c => c.id = cliente.id);
-  //   if (i > -1){
-  //     this.lista.slice(i,1);
-  //   }
-  // }
+  async excluir(cliente : Cliente){
+    return await this.http.delete('http://localhost:3000/clientes/' + cliente.id).toPromise();
+  }
 }
