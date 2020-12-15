@@ -1,0 +1,37 @@
+<p>
+    <button [routerLink]="['/cadastro-cliente']"> Novo </button>
+</p>
+
+<table style="width:100%">
+    <tr>
+        <th> ID </th>
+        <th> Nome </th>
+        <th> Sobrenome </th>
+        <th> E-mail </th>
+        <th> Sexo </th>
+        <th> CPF </th>
+        <th> RG </th>
+        <th> Telefone </th>
+        <th> Data de Nascimento </th>
+        <th> Estado Civil </th>
+        <th> CEP </th>
+        <th> Endereço </th>
+    </tr>
+    
+    <tr style="text-align: center;" *ngFor="let cliente of lista">
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.nome }}</td>
+        <td>{{ cliente.sobrenome }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.sexo }}</td>
+        <td>{{ cliente.cpf }}</td>
+        <td>{{ cliente.rg }}</td>
+        <td>{{ cliente.telefone }}</td>
+        <td>{{ cliente.dataNascimento }}</td>
+        <td>{{ cliente.estadoCivil }}</td>
+        <td>{{ cliente.cep }}</td>
+        <td>{{ cliente.endereco }}</td>
+        <button [routerLink]="['/cadastro-cliente/', cliente.id]">Editar</button>
+    </tr>
+
+</table>

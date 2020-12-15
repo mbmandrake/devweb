@@ -1,0 +1,113 @@
+<label for="id">ID: </label> <br>
+<input name="id" id="id" type="number" [(ngModel)]=" cliente.id " required> <br>
+<br>
+
+<label for="nome">Nome: </label> <br>
+<input name="nome" id="nome" type="text" [(ngModel)]=" cliente.nome " required> <br>
+<br>
+
+<label for="sobrenome">Sobrenome: </label> <br>
+<input name="sobrenome" id="sobrenome" type="text" [(ngModel)]=" cliente.sobrenome " required> <br>
+<br>
+
+<label for="senha">Senha: </label> <br>
+<input name="senha" id="senha" type="password" [(ngModel)]=" cliente.senha " required> <br>
+<br>
+
+<label for="email">E-mail: </label> <br>
+<input name="email" id="email" type="email" [(ngModel)]=" cliente.email " required> <br>
+<br>
+
+<label for="sexo">Sexo: </label> <br>
+<select name="sexo" id="sexo">
+
+    <option [(ngModel)]="cliente.sexo ">Masculino</option>
+    <option [(ngModel)]="cliente.sexo">Feminino</option>
+
+</select>
+<br>
+<br>
+
+<label for="cpf">CPF: </label> <br>
+<input name="cpf" id="cpf" type="text" maxlength="14" [(ngModel)]=" cliente.cpf "> 
+<br>
+<br>
+
+<label for="rg">RG: </label> <br>
+<input name="rg" id="rg" type="text" [(ngModel)]=" cliente.rg "> 
+<br>
+<br>
+
+<label for="telefone">Telefone: </label> <br>
+<input name="telefone" id="telefone" type="text" maxlength="14" [(ngModel)]=" cliente.telefone "> 
+<br>
+<br>
+
+<label for="dataNascimento">Data Nascimento: </label> <br>
+<input name="dataNascimento" id="dataNascimento" type="date" [(ngModel)]=" cliente.dataNascimento "> 
+<br>
+<br>
+
+<label for="estadoCivil">Estado Civil: </label> <br>
+<select name="estadoCivil" id="estadoCivil">
+  
+    <option [(ngModel)]="cliente.estadoCivil">Solteiro</option>
+    <option [(ngModel)]="cliente.estadoCivil">Casado</option>
+    <option [(ngModel)]="cliente.estadoCivil">Divorciado</option>
+    <option [(ngModel)]="cliente.estadoCivil">Viúvo</option>
+    <option [(ngModel)]="cliente.estadoCivil">Separado</option>
+
+    <!-- <% if (cliente.estadoCivil == 2) { 
+    <option [(ngModel)]=" cliente.estadoCivil ">Casado</option>
+    <option [(ngModel)]="1">Solteiro</option>
+    <option [(ngModel)]="3">Divorciado</option>
+    <option [(ngModel)]="4">Viúvo</option>
+    <option [(ngModel)]="5">Separado</option>
+    <% } 
+    <% if (cliente.estadoCivil == 3) { 
+    <option [(ngModel)]=" cliente.estadoCivil ">Divorciado</option>
+    <option [(ngModel)]="1">Solteiro</option>
+    <option [(ngModel)]="2">Casado</option>
+    <option [(ngModel)]="4">Viúvo</option>
+    <option [(ngModel)]="5">Separado</option>
+    <% } 
+    <% if (cliente.estadoCivil == 4) { 
+    <option [(ngModel)]=" cliente.estadoCivil ">Viúvo</option>
+    <option [(ngModel)]="1">Solteiro</option>
+    <option [(ngModel)]="2">Casado</option>
+    <option [(ngModel)]="3">Divorciado</option>
+    <option [(ngModel)]="5">Separado</option>
+    <% } 
+    <% if (cliente.estadoCivil == 5) { 
+    <option [(ngModel)]=" cliente.estadoCivil ">Separado</option>
+    <option [(ngModel)]="1">Solteiro</option>
+    <option [(ngModel)]="2">Casado</option>
+    <option [(ngModel)]="3">Divorciado</option>
+    <option [(ngModel)]="4">Viúvo</option>
+    <% } 
+    <% if (cliente.estadoCivil == '') { 
+    <option [(ngModel)]="1">Solteiro</option>
+    <option [(ngModel)]="2">Casado</option>
+    <option [(ngModel)]="3">Divorciado</option>
+    <option [(ngModel)]="4">Viúvo</option>
+    <option [(ngModel)]="5">Separado</option>
+    <% }  -->
+</select>
+<br>
+<br>
+
+<label for="cep">CEP: </label> <br>
+    <input name="cep" id="cep" type="text" maxlength="15" [(ngModel)]=" cliente.cep "> 
+<br>
+<br>
+
+<label for="endereco">Endereço: </label> <br>
+    <input name="endereco" id="endereco" type="text" [(ngModel)]=" cliente.endereco "> 
+<br>
+<br>
+
+<p>
+    <button (click)="salvar()">Salvar</button>
+    <button [routerLink]="['/lista-cliente']">Cancelar</button>
+    <!-- <button *ngIf="existe" (click)="excluir()">Excluir</button> -->
+</p>

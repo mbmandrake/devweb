@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Trabalho 02</title>
+</head>
+
+<body>
+    <form action="http://localhost:8081/">
+        <input type="submit" value="Incluir Cadastro" />
+    </form>
+    <br>
+
+    <table style="width:100%">
+        <tr>
+            <th> ID </th>
+            <th> Nome </th>
+            <th> Sobrenome </th>
+            <th> E-mail </th>
+            <th> Sexo </th>
+            <th> CPF </th>
+            <th> RG </th>
+            <th> Telefone </th>
+            <th> Data de Nascimento </th>
+            <th> Estado Civil </th>
+            <th> CEP </th>
+            <th> Endereço </th>
+        </tr>
+        <% for( let i = 0; i < lista.length; i++ ) { %>
+
+        <tr style="text-align: center;">
+            <td><%= lista[i].id %></td>
+            <td><%= lista[i].nome %></td>
+            <td><%= lista[i].sobrenome %></td>
+            <td><%= lista[i].email %></td>
+            <td><%= lista[i].sexo %></td>
+            <td><%= lista[i].cpf %></td>
+            <td><%= lista[i].rg %></td>
+            <td><%= lista[i].telefone %></td>
+            <td><%= lista[i].dataNascimento %></td>
+            <td><%= lista[i].estadoCivil %></td>
+            <td><%= lista[i].cep %></td>
+            <td><%= lista[i].endereco %></td>
+            <td><a href="http://localhost:8081/clientes/<%= lista[i].id %>">Editar</a></td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+
+</html>
