@@ -19,12 +19,14 @@
 <br>
 
 <label for="sexo">Sexo: </label> <br>
-<select name="sexo" id="sexo">
+<input name="sexo" id="sexo" type="email" [(ngModel)]=" cliente.sexo " required> <br>
+
+<!-- <select name="sexo" id="sexo">
 
     <option [(ngModel)]="cliente.sexo ">Masculino</option>
     <option [(ngModel)]="cliente.sexo">Feminino</option>
 
-</select>
+</select> -->
 <br>
 <br>
 
@@ -49,50 +51,15 @@
 <br>
 
 <label for="estadoCivil">Estado Civil: </label> <br>
-<select name="estadoCivil" id="estadoCivil">
-  
+<input name="estadoCivil" id="estadoCivil" type="number" maxlength="14" [(ngModel)]=" cliente.estadoCivil "> 
+
+<!-- <select name="estadoCivil" id="estadoCivil">
     <option [(ngModel)]="cliente.estadoCivil">Solteiro</option>
     <option [(ngModel)]="cliente.estadoCivil">Casado</option>
     <option [(ngModel)]="cliente.estadoCivil">Divorciado</option>
     <option [(ngModel)]="cliente.estadoCivil">Viúvo</option>
     <option [(ngModel)]="cliente.estadoCivil">Separado</option>
-
-    <!-- <% if (cliente.estadoCivil == 2) { 
-    <option [(ngModel)]=" cliente.estadoCivil ">Casado</option>
-    <option [(ngModel)]="1">Solteiro</option>
-    <option [(ngModel)]="3">Divorciado</option>
-    <option [(ngModel)]="4">Viúvo</option>
-    <option [(ngModel)]="5">Separado</option>
-    <% } 
-    <% if (cliente.estadoCivil == 3) { 
-    <option [(ngModel)]=" cliente.estadoCivil ">Divorciado</option>
-    <option [(ngModel)]="1">Solteiro</option>
-    <option [(ngModel)]="2">Casado</option>
-    <option [(ngModel)]="4">Viúvo</option>
-    <option [(ngModel)]="5">Separado</option>
-    <% } 
-    <% if (cliente.estadoCivil == 4) { 
-    <option [(ngModel)]=" cliente.estadoCivil ">Viúvo</option>
-    <option [(ngModel)]="1">Solteiro</option>
-    <option [(ngModel)]="2">Casado</option>
-    <option [(ngModel)]="3">Divorciado</option>
-    <option [(ngModel)]="5">Separado</option>
-    <% } 
-    <% if (cliente.estadoCivil == 5) { 
-    <option [(ngModel)]=" cliente.estadoCivil ">Separado</option>
-    <option [(ngModel)]="1">Solteiro</option>
-    <option [(ngModel)]="2">Casado</option>
-    <option [(ngModel)]="3">Divorciado</option>
-    <option [(ngModel)]="4">Viúvo</option>
-    <% } 
-    <% if (cliente.estadoCivil == '') { 
-    <option [(ngModel)]="1">Solteiro</option>
-    <option [(ngModel)]="2">Casado</option>
-    <option [(ngModel)]="3">Divorciado</option>
-    <option [(ngModel)]="4">Viúvo</option>
-    <option [(ngModel)]="5">Separado</option>
-    <% }  -->
-</select>
+</select> -->
 <br>
 <br>
 
